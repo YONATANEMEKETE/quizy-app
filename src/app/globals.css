@@ -29,6 +29,12 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    /* my styles  */
+
+    --text: #050505;
+    --text-gray: #6f6e6d;
+    --bg-body: #ece7d5;
+    --my-accent: #febc06;
   }
 
   .dark {

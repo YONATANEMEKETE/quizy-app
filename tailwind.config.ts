@@ -22,6 +22,11 @@ const config = {
         heading: ['var(--font-heading)'],
       },
       colors: {
+        mytext: 'var(--text)',
+        mytextgray: 'var(--text-gray)',
+        mybg: 'var(--bg-body)',
+        myaccent: 'var(--my-accent)',
+        // my colors
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
