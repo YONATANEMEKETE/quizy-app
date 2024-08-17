@@ -25,7 +25,7 @@ const config = {
         mytext: 'var(--text)',
         mytextgray: 'var(--text-gray)',
         mybg: 'var(--bg-body)',
-        myaccent: 'var(--my-accent)',
+        myaccent: 'hsl(var(--my-accent))',
         // my colors
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
