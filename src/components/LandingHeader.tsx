@@ -14,7 +14,7 @@ const LandingHeader = () => {
   return (
     <header className="max-w-[1200px] mx-auto h-16 md:h-20 lg:h-24 bg-transparent">
       <nav className="size-full flex items-center justify-between px-4">
-        <div className="flex items-center gap-x-6 md:gap-x-10">
+        <div className="flex items-center gap-x-6 md:gap-x-10 lg:gap-x-20">
           <div className="flex items-center gap-x-2 cursor-pointer">
             <Image
               src={logo}
@@ -32,14 +32,14 @@ const LandingHeader = () => {
           </p>
         </div>
         <div className="flex items-center gap-x-4">
-          <Button size="icon" className="bg-myaccent hover:bg-myaccent/40">
+          <Button size="icon" className="bg-mytext hover:bg-mytext/60">
             <MoonStar />
           </Button>
           <div className="hidden md:flex border-l border-mytext pl-4  items-center gap-x-2">
             <Button
               variant={'ghost'}
               size="default"
-              className="text-lg text-mytext font-semibold hover:bg-myaccent/40"
+              className="text-lg text-mytext font-semibold hover:bg-myaccent/50"
             >
               Sign In
             </Button>
@@ -47,7 +47,7 @@ const LandingHeader = () => {
               size="default"
               className="text-lg text-mytext font-semibold bg-myaccent hover:bg-myaccent/70"
             >
-              Sign In
+              Sign Up
             </Button>
           </div>
         </div>
