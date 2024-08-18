@@ -23,7 +23,7 @@ const LandingHeader = () => {
               height={50}
               className="h-auto"
             />
-            <p className="text-2xl md:text-3xl text-mytext font-bold font-heading">
+            <p className="text-2xl md:text-3xl text-myaccent font-bold font-heading">
               Quizy
             </p>
           </div>
