@@ -3,15 +3,15 @@ import React from 'react';
 
 type navProps = {
   text: string;
+  icon: React.ReactNode;
 };
-const Navbtn = ({ text }: navProps) => {
+const Navbtn = ({ text, icon }: navProps) => {
   return (
-    <div
-      className="w-full pl-6 py-4 flex items-center gap-x-4 bg-navbtn hover:bg-myaccent/40 rounded-md 
-    cursor-pointer active:scale-75 transition-all duration-500 mb-2"
-    >
-      <Award />
-      <div className="text-mytext   text-xl font-bold">{text}</div>
+    <div className="group w-full px-4 py-2 flex items-center gap-x-4 bg-transparent hover:border-l-2 border-mytext hover:bg-myaccent/30  rounded-md cursor-pointer">
+      {icon}
+      <div className="text-base text-mytextgray group-hover:text-mytext  font-bold">
+        {text}
+      </div>
     </div>
   );
 };
