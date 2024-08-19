@@ -4,7 +4,7 @@ import { Bookmark, Save } from 'lucide-react';
 import { useState } from 'react';
 
 const SaveBtn = () => {
-  const [isSaved, setIsSaved] = useState(false);
+  const [isSaved, setIsSaved] = useState<boolean>(false);
 
   const handleSave = () => {
     setIsSaved(!isSaved);
@@ -14,7 +14,7 @@ const SaveBtn = () => {
     <div
       onClick={handleSave}
       className={`flex items-center gap-2 p-2 py-1 rounded-md ${
-        isSaved ? 'bg-[#cccccc]' : 'border'
+        isSaved ? 'bg-myaccent/40' : 'border'
       }  border-mytextgray cursor-pointer`}
     >
       <div
@@ -26,7 +26,7 @@ const SaveBtn = () => {
       </div>
       <Bookmark
         className={`text-mytextgray ${
-          isSaved ? 'fill-black stroke-black' : ''
+          isSaved ? 'fill-myaccent stroke-myaccent' : ''
         }`}
       />
     </div>

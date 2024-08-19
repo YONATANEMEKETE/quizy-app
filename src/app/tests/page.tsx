@@ -5,9 +5,9 @@ import React from 'react';
 
 const Tests = () => {
   return (
-    <main className="max-w-screen min-h-screen h-screen  overflow-x-hidden min-[1200px]:flex items-start gap-12 bg-mybg">
-      <QuizHeader />
-      <Sidebar />
+    <main>
+      {/* <QuizHeader /> */}
+      {/* <Sidebar /> */}
       <QuizList />
     </main>
   );
