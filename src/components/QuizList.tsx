@@ -5,10 +5,10 @@ import QuizCard from './QuizCard';
 
 const QuizList = () => {
   return (
-    <main className=" min-[1200px]:flex-1 h-1/5 mt-10 pt-6 space-y-10">
-      <div className="w-max mx-auto flex flex-col min-[500px]:flex-row items-center gap-2">
+    <main className="min-[1200px]:flex-1 h-1/5 my-10 py-6  px-4 space-y-10">
+      <div className="w-max mx-auto min-[1200px]:ml-0 flex flex-col min-[500px]:flex-row items-center gap-2">
         <Input
-          className="min-w-[250px] text-base text-mytext font-semibold"
+          className="min-w-[300px] min-[1200px]:w-[400px] text-base text-mytext font-semibold"
           placeholder="Ex. physics"
         />
         <Button
@@ -20,6 +20,8 @@ const QuizList = () => {
       </div>
       {/* quiz cards ui */}
       <div className=" flex flex-wrap items-center justify-center min-[1200px]:justify-start gap-6">
+        <QuizCard />
+        <QuizCard />
         <QuizCard />
         <QuizCard />
         <QuizCard />
