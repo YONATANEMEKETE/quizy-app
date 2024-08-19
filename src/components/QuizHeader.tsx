@@ -12,7 +12,7 @@ import {
 
 const QuizHeader = () => {
   return (
-    <header className="min-[1200px]:hidden max-w-[1200px] mx-auto  h-16 md:h-20 lg:h-24 bg-transparent">
+    <header className="min-[1200px]:hidden max-w-[1200px] mx-auto  h-16 md:h-20 lg:h-24 bg-white rounded-b-xl">
       <nav className="size-full flex items-center justify-between px-4 md:px-8">
         <div className="flex items-center gap-x-6 md:gap-x-10 lg:gap-x-20">
           <div className="flex items-center gap-x-2 cursor-pointer">

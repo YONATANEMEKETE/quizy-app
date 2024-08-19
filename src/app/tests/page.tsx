@@ -1,12 +1,14 @@
 import QuizHeader from '@/components/QuizHeader';
+import QuizList from '@/components/QuizList';
 import Sidebar from '@/components/Sidebar';
 import React from 'react';
 
 const Tests = () => {
   return (
-    <main className="w-screen h-screen overflow-hidden min-[1200px]:flex items-start gap-6 bg-mybg">
+    <main className="max-w-screen min-h-screen h-screen overflow-x-hidden min-[1200px]:flex items-start gap-16 bg-mybg">
       <QuizHeader />
       <Sidebar />
+      <QuizList />
     </main>
   );
 };
