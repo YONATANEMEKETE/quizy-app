@@ -35,6 +35,9 @@
     --text-gray: #6f6e6d;
     --bg-body: #ece7d5;
     --my-accent: 44 99% 51%;
+
+    --activenav: 0 0% 9%;
+    --navbtn: 40 10% 94%;
   }
 
   .dark {
@@ -67,9 +70,9 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply box-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground box-border;
   }
 }

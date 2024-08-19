@@ -26,6 +26,8 @@ const config = {
         mytextgray: 'var(--text-gray)',
         mybg: 'var(--bg-body)',
         myaccent: 'hsl(var(--my-accent))',
+        navbtn: 'hsl(var(--navbtn))',
+        activenav: 'hsl(var(--activebtn))',
         // my colors
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

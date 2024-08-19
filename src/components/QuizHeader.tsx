@@ -12,7 +12,7 @@ import {
 
 const QuizHeader = () => {
   return (
-    <header className="max-w-[1200px] mx-auto  h-16 md:h-20 lg:h-24 bg-transparent">
+    <header className="min-[1200px]:hidden max-w-[1200px] mx-auto  h-16 md:h-20 lg:h-24 bg-transparent">
       <nav className="size-full flex items-center justify-between px-4 md:px-8">
         <div className="flex items-center gap-x-6 md:gap-x-10 lg:gap-x-20">
           <div className="flex items-center gap-x-2 cursor-pointer">
@@ -21,11 +21,9 @@ const QuizHeader = () => {
               alt="Quizy Logo"
               width={50}
               height={50}
-              className="h-auto"
+              className="h-auto md:size-[60px]"
             />
-            <p className="text-2xl md:text-3xl text-myaccent font-bold font-heading">
-              Quizy
-            </p>
+            <div className="text-myaccent text-3xl font-bold">Quizy</div>
           </div>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -58,7 +56,7 @@ const QuizHeader = () => {
           </Button>
           <div className="hidden md:block h-10 w-[1px] border-l border-mytext"></div>
           <div className="flex items-center gap-x-2 cursor-pointer">
-            <ChevronDown className="size-8" />
+            <ChevronDown className="size-8 hidden md:block" />
             <p className="hidden md:block text-base text-mytext font-semibold">
               Yonatane
             </p>
