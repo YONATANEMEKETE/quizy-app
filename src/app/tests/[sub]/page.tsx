@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import React from 'react';
 import { QuizCards } from '@/data/data';
 import { redirect, useRouter } from 'next/navigation';
+import { useScoreStore } from '@/Stores/store';
 // import { question } from '@/Types/types';
 
 const SingleQuiz = ({ params }: { params: { sub: string } }) => {
@@ -12,14 +13,22 @@ const SingleQuiz = ({ params }: { params: { sub: string } }) => {
   const card = QuizCards.find((card) => card.subject === params.sub);
   const [currentQuestion, setCurrentQuestion] = React.useState<number>(0);
   const [isEnd, setIsEnd] = React.useState<boolean>(false);
+  const { isAnswer, resetAnswer } = useScoreStore();
+  const [isRight, setIsRight] = React.useState<string>('');
+
   const handleNext = () => {
-    if (currentQuestion < card?.questions.length - 2) {
-      setCurrentQuestion((prev) => prev + 1);
-    } else if (currentQuestion === card?.questions.length - 2) {
-      setCurrentQuestion((prev) => prev + 1);
-      setIsEnd(true);
-    } else {
-      router.push(`/tests/${params.sub}/result`);
+    if (isAnswer !== '') {
+      if (currentQuestion < card?.questions.length - 2) {
+        setCurrentQuestion((prev) => prev + 1);
+      } else if (currentQuestion === card?.questions.length - 2) {
+        setCurrentQuestion((prev) => prev + 1);
+        setIsEnd(true);
+      } else {
+        router.push(`/tests/${params.sub}/result`);
+      }
+
+      resetAnswer();
+      setIsRight('');
     }
   };
 
@@ -39,6 +48,7 @@ const SingleQuiz = ({ params }: { params: { sub: string } }) => {
             key={option.choice}
             choice={option.choice}
             answer={card?.questions[currentQuestion].answer}
+            isRight={isRight}
           />
         ))}
       </div>
