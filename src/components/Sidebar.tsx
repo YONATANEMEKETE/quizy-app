@@ -25,7 +25,7 @@ const Sidebar = async () => {
                 height={70}
                 className="h-auto"
               />
-              <div className="text-myaccent text-3xl font-bold">Quizy</div>
+              <div className="text-myaccent text-5xl font-bold">Quizy</div>
             </div>
           </Link>
           <Separator />
@@ -56,7 +56,7 @@ const Sidebar = async () => {
               <p className="text-mytext text-base font-bold">
                 {user?.username}
               </p>
-              <p className="text-mytextgray text-[8px] font-bold">
+              <p className="text-mytextgray text-xs font-bold">
                 {user?.emailAddresses[0].emailAddress}
               </p>
             </div>

@@ -3,6 +3,7 @@ import { Separator } from './ui/separator';
 import { Button } from './ui/button';
 import SaveBtn from './Saved';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type Props = {
   subject: string;
@@ -40,7 +41,7 @@ const QuizCard = ({ subject, questionsNo, time, image, colorBg }: Props) => {
             size={'lg'}
             className="text-lg font-semibold bg-mytext hover:bg-mytext/70"
           >
-            Start
+            <Link href={`/tests/${subject}`}>Start</Link>
           </Button>
         </div>
       </div>

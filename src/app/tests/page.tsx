@@ -4,13 +4,7 @@ import Sidebar from '@/components/Sidebar';
 import React from 'react';
 
 const Tests = () => {
-  return (
-    <main>
-      {/* <QuizHeader /> */}
-      {/* <Sidebar /> */}
-      <QuizList />
-    </main>
-  );
+  return <QuizList />;
 };
 
 export default Tests;

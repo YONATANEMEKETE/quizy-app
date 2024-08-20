@@ -6,7 +6,7 @@ import { QuizCards } from '@/data/data';
 
 const QuizList = () => {
   return (
-    <main className="min-[1200px]:flex-1 h-1/5 my-10 lg:my-4 py-6  px-4 space-y-10">
+    <main className="min-[1200px]:flex-1 my-10 lg:my-4 py-6  px-4 space-y-10">
       <div className="w-max mx-auto min-[1200px]:ml-0 flex flex-col min-[500px]:flex-row items-center gap-2">
         <Input
           className="min-w-[300px] min-[1200px]:w-[400px] text-base text-mytext font-semibold"
