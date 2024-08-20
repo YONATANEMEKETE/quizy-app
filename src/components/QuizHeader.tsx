@@ -11,6 +11,7 @@ import {
 } from '../components/ui/dropdown-menu';
 import { UserButton } from '@clerk/nextjs';
 import { currentUser } from '@clerk/nextjs/server';
+import Link from 'next/link';
 
 const QuizHeader = async () => {
   const user = await currentUser();
@@ -19,16 +20,18 @@ const QuizHeader = async () => {
     <header className="min-[1200px]:hidden max-w-[1200px] mx-auto  h-16 md:h-20 lg:h-24 bg-white rounded-b-xl">
       <nav className="size-full flex items-center justify-between px-4 md:px-8">
         <div className="flex items-center gap-x-6 md:gap-x-10 lg:gap-x-20">
-          <div className="flex items-center gap-x-2 cursor-pointer">
-            <Image
-              src={logo}
-              alt="Quizy Logo"
-              width={50}
-              height={50}
-              className="h-auto md:size-[60px]"
-            />
-            <div className="text-myaccent text-3xl font-bold">Quizy</div>
-          </div>
+          <Link href={'/'}>
+            <div className="flex items-center gap-x-2 cursor-pointer">
+              <Image
+                src={logo}
+                alt="Quizy Logo"
+                width={50}
+                height={50}
+                className="h-auto md:size-[60px]"
+              />
+              <div className="text-myaccent text-3xl font-bold">Quizy</div>
+            </div>
+          </Link>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <div className="flex items-center gap-2 cursor-pointer">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from './ui/button';
 import HeroImages from './HeroImages';
+import Link from 'next/link';
 
 const Hero = () => {
   return (
@@ -18,9 +19,14 @@ const Hero = () => {
         <Button
           variant="default"
           size="lg"
-          className="text-xl md:text-2xl  py-4 md:py-8 font-semibold px-4  bg-myaccent hover:bg-myaccent/70 md:ml-0"
+          className="text-xl md:text-2xl  py-4 md:py-8 font-semibold  bg-myaccent hover:bg-myaccent/70 md:ml-0"
         >
-          Get Started
+          <Link
+            href={'/sign-up'}
+            className="size-full grid place-content-center px-6"
+          >
+            Get Started
+          </Link>
         </Button>
       </div>
       <HeroImages />

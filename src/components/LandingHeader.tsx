@@ -11,6 +11,7 @@ import {
   UserButton,
 } from '@clerk/nextjs';
 import { currentUser } from '@clerk/nextjs/server';
+import Link from 'next/link';
 
 const LandingHeader = async () => {
   const user = await currentUser();
@@ -19,24 +20,27 @@ const LandingHeader = async () => {
     <header className="max-w-[1200px] mx-auto h-16 md:h-20 lg:h-24 bg-transparent">
       <nav className="size-full flex items-center justify-between px-4">
         <div className="flex items-center gap-x-6 md:gap-x-10 lg:gap-x-20">
-          <div className="flex items-center gap-x-2 cursor-pointer">
-            <Image
-              src={logo}
-              alt="Quizy Logo"
-              width={50}
-              height={50}
-              className="h-auto"
-            />
-            <p className="text-2xl md:text-3xl text-myaccent font-bold font-heading">
-              Quizy
-            </p>
-          </div>
-          <p
+          <Link href={'/'}>
+            <div className="flex items-center gap-x-2 cursor-pointer">
+              <Image
+                src={logo}
+                alt="Quizy Logo"
+                width={50}
+                height={50}
+                className="h-auto"
+              />
+              <p className="text-2xl md:text-3xl text-myaccent font-bold font-heading">
+                Quizy
+              </p>
+            </div>
+          </Link>
+          <Link
+            href={'/tests'}
             className="text-xl md:text-2xl text-mytext font-semibold cursor-pointer font-heading  
           transition-all duration-300 "
           >
             Tests
-          </p>
+          </Link>
         </div>
         <div className="flex items-center gap-x-4">
           <Button size="icon" className="bg-mytext hover:bg-mytext/60">
@@ -55,7 +59,7 @@ const LandingHeader = async () => {
             </div>
           </SignedIn>
           <SignedOut>
-            <div className="hidden md:flex border-l border-mytext pl-4  items-center gap-x-2">
+            <div className="hidden md:flex  items-center gap-x-2">
               <Button
                 variant={'ghost'}
                 size="default"

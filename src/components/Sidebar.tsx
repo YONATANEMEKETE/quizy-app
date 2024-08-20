@@ -7,24 +7,27 @@ import { Separator } from './ui/separator';
 import { Switch } from './ui/switch';
 import { UserButton } from '@clerk/nextjs';
 import { currentUser } from '@clerk/nextjs/server';
+import Link from 'next/link';
 
 const Sidebar = async () => {
   const user = await currentUser();
 
   return (
-    <main className="hidden sticky top-0 left-0 min-[1200px]:flex w-[300px] bg-white h-full py-4 pt-10 px-6 rounded-e-3xl flex-col items-center justify-between">
+    <main className="hidden sticky top-0 left-0 min-[1200px]:flex w-[320px] bg-white h-full py-4 pt-10 px-6 rounded-e-3xl flex-col items-center justify-between">
       <div className="w-full space-y-8">
         <div className="w-full space-y-6">
-          <div className="flex items-center gap-x-2 w-full cursor-pointer">
-            <Image
-              src={logo}
-              alt="Quizy Logo"
-              width={70}
-              height={70}
-              className="h-auto"
-            />
-            <div className="text-myaccent text-5xl font-bold">Quizy</div>
-          </div>
+          <Link href={'/'}>
+            <div className="flex items-center gap-x-2 w-full cursor-pointer">
+              <Image
+                src={logo}
+                alt="Quizy Logo"
+                width={70}
+                height={70}
+                className="h-auto"
+              />
+              <div className="text-myaccent text-3xl font-bold">Quizy</div>
+            </div>
+          </Link>
           <Separator />
         </div>
 
