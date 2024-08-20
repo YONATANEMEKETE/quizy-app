@@ -5,8 +5,12 @@ import Navbtn from './Navbtn';
 import { Award, ChevronRight, GripVertical, Moon, User } from 'lucide-react';
 import { Separator } from './ui/separator';
 import { Switch } from './ui/switch';
+import { UserButton } from '@clerk/nextjs';
+import { currentUser } from '@clerk/nextjs/server';
 
-const Sidebar = () => {
+const Sidebar = async () => {
+  const user = await currentUser();
+
   return (
     <main className="hidden sticky top-0 left-0 min-[1200px]:flex w-[300px] bg-white h-full py-4 pt-10 px-6 rounded-e-3xl flex-col items-center justify-between">
       <div className="w-full space-y-8">
@@ -42,11 +46,15 @@ const Sidebar = () => {
         <Separator />
         <div className="group w-full py-2 px-2 rounded-md bg-transparent hover:bg-myaccent/20 flex items-center justify-between cursor-pointer">
           <div className="flex items-center gap-x-2">
-            <div className="size-12 bg-myaccent rounded-full"></div>
+            <div className="size-12 rounded-full">
+              <UserButton />
+            </div>
             <div>
-              <p className="text-mytext text-base font-bold">Yonatane</p>
-              <p className="text-mytextgray text-xs font-bold">
-                yonatane@gmail.com
+              <p className="text-mytext text-base font-bold">
+                {user?.username}
+              </p>
+              <p className="text-mytextgray text-[8px] font-bold">
+                {user?.emailAddresses[0].emailAddress}
               </p>
             </div>
           </div>

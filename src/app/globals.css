@@ -75,3 +75,7 @@
     @apply bg-background text-foreground box-border;
   }
 }
+
+.cl-userButton-root {
+  @apply size-12 scale-150 grid place-content-center p-0;
+}

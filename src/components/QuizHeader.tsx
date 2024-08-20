@@ -9,8 +9,12 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from '../components/ui/dropdown-menu';
+import { UserButton } from '@clerk/nextjs';
+import { currentUser } from '@clerk/nextjs/server';
 
-const QuizHeader = () => {
+const QuizHeader = async () => {
+  const user = await currentUser();
+
   return (
     <header className="min-[1200px]:hidden max-w-[1200px] mx-auto  h-16 md:h-20 lg:h-24 bg-white rounded-b-xl">
       <nav className="size-full flex items-center justify-between px-4 md:px-8">
@@ -58,9 +62,11 @@ const QuizHeader = () => {
           <div className="flex items-center gap-x-2 cursor-pointer">
             <ChevronDown className="size-8 hidden md:block" />
             <p className="hidden md:block text-base text-mytext font-semibold">
-              Yonatane
+              {user?.username}
             </p>
-            <div className="size-12 rounded-full bg-myaccent"></div>
+            <div className="size-12 rounded-full">
+              <UserButton />
+            </div>
           </div>
         </div>
       </nav>
