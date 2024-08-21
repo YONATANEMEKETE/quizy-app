@@ -31,7 +31,7 @@ const QuizCard = ({ subject, questionsNo, time, image, colorBg }: Props) => {
       </div>
       <div className="text-3xl text-black font-semibold ml-2">{subject}</div>
       <div className="space-y-2">
-        <Separator />
+        <Separator className="bg-black" />
         <div className="flex items-center justify-between">
           <div>
             <p className="text-base text-black font-semibold">{`${questionsNo} Qs`}</p>
