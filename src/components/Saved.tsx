@@ -19,7 +19,7 @@ const SaveBtn = () => {
     >
       <div
         className={`text-base ${
-          isSaved ? 'text-mytext' : 'text-mytextgray'
+          isSaved ? 'text-black' : 'text-mytextgray'
         } font-bold`}
       >
         {isSaved ? 'Saved' : 'Save'}

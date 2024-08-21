@@ -14,7 +14,7 @@ const QuizList = () => {
         />
         <Button
           size={'lg'}
-          className="text-xl font-semibold bg-myaccent hover:bg-myaccent/70"
+          className="text-xl text-white font-semibold bg-myaccent hover:bg-myaccent/70"
         >
           Search
         </Button>

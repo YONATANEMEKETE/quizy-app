@@ -70,7 +70,7 @@ const SingleQuiz = ({ params }: { params: { sub: string } }) => {
         <Button
           onClick={handleNext}
           size={'lg'}
-          className="text-lg font-semibold bg-myaccent hover:bg-myaccent/80"
+          className="text-lg text-white font-semibold bg-myaccent hover:bg-myaccent/80"
         >
           {isEnd ? 'Result' : 'Next'}
         </Button>

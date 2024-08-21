@@ -35,7 +35,7 @@ const result = ({ params }: { params: { result: number } }) => {
         <Link href={'/tests'}>
           <Button
             size={'lg'}
-            className="text-lg font-semibold bg-myaccent hover:bg-myaccent/70"
+            className="text-lg text-white font-semibold bg-myaccent hover:bg-myaccent/70"
           >
             Back to Tests
           </Button>

@@ -61,7 +61,7 @@ const Answers = ({ text, choice, answer, setScore }: Props) => {
         <div className="relative size-6 rounded-full overflow-hidden">
           <Image src={marks[choice - 1]} alt="choice" fill className="" />
         </div>
-        <p className="text-mytext text-xl font-semibold">{text}</p>
+        <p className="text-black text-xl font-semibold">{text}</p>
       </div>
       <div className="size-6 rounded-full overflow-hidden relative">
         {isSuccess === 'right' ? (

@@ -29,17 +29,17 @@ const QuizCard = ({ subject, questionsNo, time, image, colorBg }: Props) => {
         </div>
         <SaveBtn />
       </div>
-      <div className="text-3xl text-mytext font-semibold ml-2">{subject}</div>
+      <div className="text-3xl text-black font-semibold ml-2">{subject}</div>
       <div className="space-y-2">
         <Separator />
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-base text-mytext font-semibold">{`${questionsNo} Qs`}</p>
+            <p className="text-base text-black font-semibold">{`${questionsNo} Qs`}</p>
             <p className="text-xs text-mytextgray font-semibold">{`${time} Mins`}</p>
           </div>
           <Button
             size={'lg'}
-            className="text-lg font-semibold bg-mytext hover:bg-mytext/70"
+            className="text-lg text-white font-semibold bg-black hover:bg-black/70"
           >
             <Link href={`/tests/${subject}`}>Start</Link>
           </Button>

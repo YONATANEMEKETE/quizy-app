@@ -14,7 +14,7 @@ const Sidebar = async () => {
   const user = await currentUser();
 
   return (
-    <main className="hidden sticky top-0 left-0 min-[1200px]:flex w-[320px] bg-white h-full py-4 pt-10 px-6 rounded-e-3xl flex-col items-center justify-between">
+    <main className="hidden sticky top-0 left-0 min-[1200px]:flex w-[320px] bg-white dark:bg-black h-full py-4 pt-10 px-6 rounded-e-3xl flex-col items-center justify-between">
       <div className="w-full space-y-8">
         <div className="w-full space-y-6">
           <Link href={'/'}>

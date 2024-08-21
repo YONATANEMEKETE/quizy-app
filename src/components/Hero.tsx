@@ -19,7 +19,7 @@ const Hero = () => {
         <Button
           variant="default"
           size="lg"
-          className="text-xl md:text-2xl  py-4 md:py-8 font-semibold  bg-myaccent hover:bg-myaccent/70 md:ml-0"
+          className="text-xl md:text-2xl  py-4 md:py-8 font-semibold  bg-myaccent hover:bg-myaccent/80 md:ml-0"
         >
           <Link
             href={'/sign-up'}
