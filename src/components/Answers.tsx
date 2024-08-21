@@ -15,9 +15,11 @@ type Props = {
   text: string;
   answer: string;
   choice: number;
+  // score: number;
+  setScore: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const Answers = ({ text, choice, answer }: Props) => {
+const Answers = ({ text, choice, answer, setScore }: Props) => {
   const { isAnswer, setAnswer, resetAnswer } = useScoreStore();
   const [isSuccess, setIsSuccess] = useState(isAnswer);
 
@@ -30,6 +32,7 @@ const Answers = ({ text, choice, answer }: Props) => {
   const handleAnswer = () => {
     if (answer === text) {
       setAnswer('right');
+      setScore((prev) => prev + 1);
       // setIsIsRight('right');
     } else {
       setAnswer('wrong');

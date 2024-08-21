@@ -9,30 +9,37 @@ import Link from 'next/link';
 
 const DynamicLottie = dynamic(() => import('lottie-react'), { ssr: false });
 
-const result = () => {
+const result = ({ params }: { params: { result: number } }) => {
+  const message = params.result >= 8 ? 'Well Done' : 'Better Luck Next Time';
+
   return (
-    <main className="relative flex-1 mt-10 min-[1200px]:mt-40 py-10 px-4 space-y-16">
+    <main className="relative flex-1 mt-10 min-[1200px]:mt-40 py-10 px-4 space-y-40">
       <div className="w-fit mx-auto">
         <div className="w-max mx-auto  font-heading text-mytext text-5xl md:text-7xl font-bold mb-6">
-          Great !!!
+          {message}
         </div>
         <div className="text-xl md:text-3xl text-mytext text-center font-semibold max-w-[600px] mx-auto]">
-          You have Answered 6/10 questions right. Congra!!!
+          {`You scored ${params.result} out of 10`}
         </div>
       </div>
       <div className="flex items-center gap-4 w-max mx-auto">
-        <Button
-          size={'lg'}
-          className="text-lg font-semibold bg-mytext hover:bg-mytext/70"
-        >
-          <Link href={'..'}>Retake</Link>
-        </Button>
-        <Button
-          size={'lg'}
-          className="text-lg font-semibold bg-myaccent hover:bg-myaccent/70"
-        >
-          <Link href={'/tests'}>Back to Tests</Link>
-        </Button>
+        <Link href={'..'}>
+          <Button
+            size={'lg'}
+            className="text-lg font-semibold bg-mytext hover:bg-mytext/70"
+          >
+            Retake
+          </Button>
+        </Link>
+
+        <Link href={'/tests'}>
+          <Button
+            size={'lg'}
+            className="text-lg font-semibold bg-myaccent hover:bg-myaccent/70"
+          >
+            Back to Tests
+          </Button>
+        </Link>
       </div>
       {/* lotties */}
       <div className="absolute -top-3/4 ">

@@ -2,7 +2,7 @@
 
 import Answers from '@/components/Answers';
 import { Button } from '@/components/ui/button';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { QuizCards } from '@/data/data';
 import { redirect, useRouter } from 'next/navigation';
 import { useScoreStore } from '@/Stores/store';
@@ -10,10 +10,15 @@ import { useScoreStore } from '@/Stores/store';
 
 const SingleQuiz = ({ params }: { params: { sub: string } }) => {
   const router = useRouter();
-  const card = QuizCards.find((card) => card.subject === params.sub);
+  const card: any = QuizCards.find((card) => card.subject === params.sub);
   const [currentQuestion, setCurrentQuestion] = React.useState<number>(0);
   const [isEnd, setIsEnd] = React.useState<boolean>(false);
   const { isAnswer, resetAnswer } = useScoreStore();
+  const [score, setScore] = useState(0);
+
+  // useEffect(() => {
+  //   console.log(score);
+  // }, [score]);
 
   const handleNext = () => {
     if (isAnswer !== '') {
@@ -23,7 +28,7 @@ const SingleQuiz = ({ params }: { params: { sub: string } }) => {
         setCurrentQuestion((prev) => prev + 1);
         setIsEnd(true);
       } else {
-        router.push(`/tests/${params.sub}/result`);
+        router.push(`/tests/${params.sub}/${score}`);
       }
 
       resetAnswer();
@@ -40,12 +45,13 @@ const SingleQuiz = ({ params }: { params: { sub: string } }) => {
       </div>
       {/* answers */}
       <div className="w-full max-w-[800px] mx-auto grid  grid-cols-1 md:grid-cols-2  gap-4">
-        {card?.questions[currentQuestion].options.map((option) => (
+        {card?.questions[currentQuestion].options.map((option: any) => (
           <Answers
             text={option.text}
             key={option.choice}
             choice={option.choice}
             answer={card?.questions[currentQuestion].answer}
+            setScore={setScore}
           />
         ))}
       </div>
