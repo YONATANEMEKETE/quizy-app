@@ -12,6 +12,7 @@ import {
 import { UserButton } from '@clerk/nextjs';
 import { currentUser } from '@clerk/nextjs/server';
 import Link from 'next/link';
+import ThemeToggle from './ThemeToggle';
 
 const QuizHeader = async () => {
   const user = await currentUser();
@@ -55,12 +56,13 @@ const QuizHeader = async () => {
           </DropdownMenu>
         </div>
         <div className="flex items-center gap-x-4">
-          <Button
+          {/* <Button
             size="icon"
             className="hidden md:flex place-content-center bg-mytext hover:bg-mytext/60"
           >
             <MoonStar />
-          </Button>
+          </Button> */}
+          <ThemeToggle />
           <div className="hidden md:block h-10 w-[1px] border-l border-mytext"></div>
           <div className="flex items-center gap-x-2 cursor-pointer">
             <ChevronDown className="size-8 hidden md:block" />

@@ -64,6 +64,13 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+
+    /* my styles */
+    --text: 0 0% 100%;
+    --text-gray: #6f6e6d;
+    --my-accent: 44 99% 51%;
+    --bg-body: #fffaf5;
+    --navbtn: 40 10% 94%;
   }
 }
 

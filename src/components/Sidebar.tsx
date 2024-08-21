@@ -8,6 +8,7 @@ import { Switch } from './ui/switch';
 import { UserButton } from '@clerk/nextjs';
 import { currentUser } from '@clerk/nextjs/server';
 import Link from 'next/link';
+import SidebarToggle from './SidebarToggle';
 
 const Sidebar = async () => {
   const user = await currentUser();
@@ -44,7 +45,7 @@ const Sidebar = async () => {
             <Moon size={20} />
             <div className="text-mytext text-base font-bold">Dark Mode</div>
           </div>
-          <Switch />
+          <SidebarToggle />
         </div>
         <Separator />
         <div className="group w-full py-2 px-2 rounded-md bg-transparent hover:bg-myaccent/20 flex items-center justify-between cursor-pointer">

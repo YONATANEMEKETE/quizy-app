@@ -4,6 +4,7 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import { ClerkProvider } from '@clerk/nextjs';
 import { dark, neobrutalism } from '@clerk/themes';
+import { Provider } from './Provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -35,12 +36,19 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <body
           className={cn(
-            'bg-mybg antialiased',
+            'bg-mybg dark:bg-black antialiased transition-colors duration-200',
             inter.className,
             oswald.variable
           )}
         >
-          {children}
+          <Provider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </Provider>
         </body>
       </html>
     </ClerkProvider>

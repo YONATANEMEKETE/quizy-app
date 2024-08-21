@@ -23,7 +23,7 @@ const Hero = () => {
         >
           <Link
             href={'/sign-up'}
-            className="size-full grid place-content-center px-6"
+            className="size-full text-mytext grid place-content-center px-6"
           >
             Get Started
           </Link>
