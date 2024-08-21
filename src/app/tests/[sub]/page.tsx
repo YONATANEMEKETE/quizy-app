@@ -6,7 +6,6 @@ import React, { useEffect, useState } from 'react';
 import { QuizCards } from '@/data/data';
 import { redirect, useRouter } from 'next/navigation';
 import { useScoreStore } from '@/Stores/store';
-// import { question } from '@/Types/types';
 
 const SingleQuiz = ({ params }: { params: { sub: string } }) => {
   const router = useRouter();
@@ -15,10 +14,7 @@ const SingleQuiz = ({ params }: { params: { sub: string } }) => {
   const [isEnd, setIsEnd] = React.useState<boolean>(false);
   const { isAnswer, resetAnswer } = useScoreStore();
   const [score, setScore] = useState(0);
-
-  // useEffect(() => {
-  //   console.log(score);
-  // }, [score]);
+  const [progress, setProgress] = useState(10);
 
   const handleNext = () => {
     if (isAnswer !== '') {
@@ -32,13 +28,20 @@ const SingleQuiz = ({ params }: { params: { sub: string } }) => {
       }
 
       resetAnswer();
+      if (progress < 100) {
+        setProgress((prev) => prev + 10);
+      }
+      // console.log(progress);
     }
   };
 
   return (
     <main className="relative min-[1200px]:h-full flex-1 mt-10 min-[1200px]:mt-0 py-10 min-[1200px]:pt-20 px-4 space-y-10 min-[500px]:space-y-16 ">
       <div className="relative w-full max-w-[600px] mx-auto bg-myaccent/30 h-3 rounded-full">
-        <div className="absolute inset-0 w-1/3 bg-myaccent rounded-full"></div>
+        <div
+          style={{ width: `${progress}%` }}
+          className={`absolute left-0 top-0 bottom-0 bg-myaccent rounded-full`}
+        ></div>
       </div>
       <div className="max-w-[500px] mx-auto text-center text-3xl md:text-[2.5rem] text-mytext font-heading font-semibold">
         {`${card?.questions[currentQuestion].no}. ${card?.questions[currentQuestion].title}`}
