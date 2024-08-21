@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 // import Lottie from 'lottie-react';
 import confetti from '@/data/Lottie/confetti.json';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const DynamicLottie = dynamic(() => import('lottie-react'), { ssr: false });
 
@@ -24,13 +25,13 @@ const result = () => {
           size={'lg'}
           className="text-lg font-semibold bg-mytext hover:bg-mytext/70"
         >
-          Retake
+          <Link href={'..'}>Retake</Link>
         </Button>
         <Button
           size={'lg'}
           className="text-lg font-semibold bg-myaccent hover:bg-myaccent/70"
         >
-          Back to Tests
+          <Link href={'/tests'}>Back to Tests</Link>
         </Button>
       </div>
       {/* lotties */}

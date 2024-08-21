@@ -14,7 +14,6 @@ const SingleQuiz = ({ params }: { params: { sub: string } }) => {
   const [currentQuestion, setCurrentQuestion] = React.useState<number>(0);
   const [isEnd, setIsEnd] = React.useState<boolean>(false);
   const { isAnswer, resetAnswer } = useScoreStore();
-  const [isRight, setIsRight] = React.useState<string>('');
 
   const handleNext = () => {
     if (isAnswer !== '') {
@@ -28,7 +27,6 @@ const SingleQuiz = ({ params }: { params: { sub: string } }) => {
       }
 
       resetAnswer();
-      setIsRight('');
     }
   };
 
@@ -48,7 +46,6 @@ const SingleQuiz = ({ params }: { params: { sub: string } }) => {
             key={option.choice}
             choice={option.choice}
             answer={card?.questions[currentQuestion].answer}
-            isRight={isRight}
           />
         ))}
       </div>

@@ -15,32 +15,41 @@ type Props = {
   text: string;
   answer: string;
   choice: number;
-  isRight: string;
 };
 
-const Answers = ({ text, choice, answer, isRight }: Props) => {
+const Answers = ({ text, choice, answer }: Props) => {
   const { isAnswer, setAnswer, resetAnswer } = useScoreStore();
-  const [isItRight, setIsIsRight] = useState(isRight);
+  const [isSuccess, setIsSuccess] = useState(isAnswer);
+
   // use choice - 1 to get the right mark of the choice
   const marks = [a, b, c, d];
 
+  const checkIfAnswer = () => {
+    text === answer ? setIsSuccess('right') : setIsSuccess('wrong');
+  };
   const handleAnswer = () => {
     if (answer === text) {
       setAnswer('right');
-      setIsIsRight('right');
+      // setIsIsRight('right');
     } else {
       setAnswer('wrong');
-      setIsIsRight('wrong');
+      // setIsIsRight('wrong');
     }
+
+    checkIfAnswer();
+
+    setTimeout(() => {
+      setIsSuccess('');
+    }, 1000);
   };
 
   return (
     <div
       onClick={handleAnswer}
       className={`min-w-[300px] mx-auto w-[350px] px-4 py-4 rounded-xl shadow-md ${
-        isItRight === 'right'
+        isSuccess === 'right'
           ? 'ring-1 ring-myaccent'
-          : isItRight === 'wrong'
+          : isSuccess === 'wrong'
           ? 'ring-1 ring-red-600'
           : ''
       } bg-white flex items-center justify-between cursor-pointer`}
@@ -52,9 +61,9 @@ const Answers = ({ text, choice, answer, isRight }: Props) => {
         <p className="text-mytext text-xl font-semibold">{text}</p>
       </div>
       <div className="size-6 rounded-full overflow-hidden relative">
-        {isItRight === 'right' ? (
+        {isSuccess === 'right' ? (
           <Image src={check} alt="answer" fill className="" />
-        ) : isItRight === 'wrong' ? (
+        ) : isSuccess === 'wrong' ? (
           <Image src={wrong} alt="answer" fill className="" />
         ) : null}
       </div>
